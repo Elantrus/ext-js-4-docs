@@ -1,194 +1,145 @@
-# ExtJS 4 Documentation Extractor
+# ExtJS 4 Documentation
 
-Este projeto extrai a documentação do ExtJS 4 a partir da API oficial da Sencha e converte para formato Markdown.
+Complete ExtJS 4 documentation in Markdown format, extracted from the official Sencha API.
 
-## Funcionalidades
+## About
 
-✅ **Extração completa da documentação** incluindo:
-- Informações básicas da classe (extends, aliases, etc.)
-- Descrição principal da classe
-- Exemplos de código
-- Configurações (Config options)
-- Propriedades (Properties)
-- Métodos (Methods)
-- Eventos (Events)
-- Variáveis CSS (CSS Variables)
-- Mixins CSS (CSS Mixins)
+This is a comprehensive collection of ExtJS 4.2.1 documentation, organized in Markdown files for easy navigation and reference. The documentation includes all major framework classes, organized by namespace.
 
-✅ **Conversão automática para Markdown** com formatação adequada
+## Content
 
-✅ **Suporte a qualquer classe do ExtJS 4**
+✅ **67 documented classes** including:
+- Basic class information (extends, aliases, etc.)
+- Main class description
+- Code examples
+- Configuration options (Config options)
+- Properties
+- Methods
+- Events
+- CSS Variables
+- CSS Mixins
 
-## Requisitos
+## Organization
 
-- Node.js (versão 14 ou superior)
-- Bun (opcional, mas recomendado)
-- curl (para download dos dados)
-
-## Instalação
-
-1. Clone ou baixe este repositório
-2. Instale as dependências (se necessário):
-
-```bash
-npm install
-# ou
-bun install
-```
-
-## Uso
-
-### Script Genérico
-
-Para extrair documentação de qualquer classe do ExtJS 4:
-
-```bash
-node extract_extjs_docs.js <NomeDaClasse>
-```
-
-**Exemplos:**
-
-```bash
-# Extrair documentação do Panel
-node extract_extjs_docs.js Ext.panel.Panel
-
-# Extrair documentação do Grid
-node extract_extjs_docs.js Ext.grid.Panel
-
-# Extrair documentação do Button
-node extract_extjs_docs.js Ext.button.Button
-
-# Extrair documentação do Form
-node extract_extjs_docs.js Ext.form.Panel
-```
-
-### Script Específico (Panel)
-
-Para usar o script específico do Panel:
-
-```bash
-node index.js
-```
-
-## Estrutura dos Arquivos Gerados
-
-Para cada classe extraída, são gerados os seguintes arquivos:
-
-- `<NomeDaClasse>.md` - Documentação em Markdown
-- `<NomeDaClasse>_data.json` - Dados JSON extraídos da API
-- `<NomeDaClasse>_raw.js` - Arquivo JSONP original baixado
-
-## Exemplo de Saída
+The documentation is organized by namespace, following the ExtJS class structure:
 
 ```
-✅ Documentação gerada em: Ext.panel.Panel.md
-📊 Seções encontradas: Config options, Properties, Methods, Events, CSS Variables, CSS Mixins
-💡 Exemplos de código: 3
-   Config options: 714 itens
-   Properties: 593 itens
-   Methods: 536 itens
-   Events: 102 itens
-   CSS Variables: 57 itens
-   CSS Mixins: 1 itens
+📁 app/                    - Application framework classes
+  📁 domain/              - Event domain classes
+📁 button/                - Button components
+📁 data/                  - Data management classes
+📁 direct/                - Direct remoting classes
+📁 layout/                - Layout management classes
+  📁 container/           - Container layout classes
+📁 panel/                 - Panel components
+📁 util/                  - Utility classes
+📄 *.md                   - Core framework classes
 ```
 
-## Estrutura da Documentação Markdown
+## Documentation Structure
 
-A documentação gerada segue esta estrutura:
+Each class documentation follows this structure:
 
 ```markdown
-# Nome.da.Classe
+# ClassName
 
-**Extends:** ClassePai
+**Extends:** ParentClass
 **Widget Alias:** alias
-**Alternate Names:** nomes alternativos
+**Alternate Names:** alternate names
 
-## Descrição
-Descrição principal da classe...
+## Description
+Main class description...
 
-## Exemplos
-### Exemplo 1
+## Examples
+### Example 1
 ```javascript
-// Código de exemplo
+// Code example
 ```
 
 ## Config options
-### nomeConfig
-**Tipo:** TipoDoConfig
-Descrição da configuração...
+### configName
+**Type:** ConfigType
+Configuration description...
 
 ## Properties
-### nomePropriedade
-**Tipo:** TipoDaPropriedade
-Descrição da propriedade...
+### propertyName
+**Type:** PropertyType
+Property description...
 
 ## Methods
-### nomeMetodo
-Descrição do método...
+### methodName
+Method description...
 
 ## Events
-### nomeEvento
-Descrição do evento...
+### eventName
+Event description...
 
 ## CSS Variables
-### $variavel-css
-Descrição da variável CSS...
+### $css-variable
+CSS variable description...
 
 ## CSS Mixins
-### nome-mixin
-Descrição do mixin CSS...
+### mixin-name
+CSS mixin description...
 ```
 
-## Como Funciona
+## Popular ExtJS 4 Classes
 
-1. **Download**: O script baixa os dados da API oficial do ExtJS 4 via JSONP
-2. **Parsing**: Extrai o JSON do formato JSONP
-3. **Processamento**: Analisa o HTML da documentação e extrai as seções
-4. **Conversão**: Converte para Markdown com formatação adequada
-5. **Geração**: Salva o arquivo Markdown final
+Some of the most commonly used classes included in this documentation:
 
-## API do ExtJS 4
+### Core Components
+- `Ext.Component` - Base component class
+- `Ext.panel.Panel` - Basic panel component
+- `Ext.button.Button` - Button component
+- `Ext.container.Container` - Container component
 
-O script utiliza a API oficial da Sencha:
+### Application Framework
+- `Ext.app.Application` - Application class
+- `Ext.app.Controller` - Controller class
+- `Ext.app.EventDomain` - Event domain base class
 
-```
-https://cdn.sencha.com/ext/gpl/4.2.1/docs/output/{ClassName}.js?callback=Ext.data.JsonP.{ClassName}&_dc={timestamp}
-```
+### Data Management
+- `Ext.data.AbstractStore` - Abstract store class
 
-## Limitações
+### Layout Management
+- `Ext.layout.container.Accordion` - Accordion layout
 
-- Funciona apenas com ExtJS 4.2.1
-- Requer conexão com a internet para baixar os dados
-- Algumas formatações complexas podem não ser preservadas perfeitamente
+### Utilities
+- `Ext.Ajax` - AJAX utilities
+- `Ext.Array` - Array utilities
+- `Ext.Date` - Date utilities
+- `Ext.Function` - Function utilities
+- `Ext.JSON` - JSON utilities
+- `Ext.Number` - Number utilities
+- `Ext.Object` - Object utilities
+- `Ext.String` - String utilities
 
-## Contribuição
+### Core Framework
+- `Ext.Base` - Base class for all Ext classes
+- `Ext.Class` - Class system
+- `Ext.ClassManager` - Class manager
+- `Ext.Loader` - Dynamic class loader
+- `Ext.Template` - Template class
+- `Ext.XTemplate` - Advanced template class
 
-Sinta-se à vontade para contribuir com melhorias:
+## Usage
 
-1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
+Simply browse the documentation files to find the class you need. Each file contains comprehensive information about the class, including configuration options, properties, methods, and events.
 
-## Licença
+## Contributing
+
+Feel free to contribute improvements:
+
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## License
 
 MIT License
 
-## Classes Populares do ExtJS 4
+## Source
 
-Algumas classes úteis para extrair documentação:
-
-- `Ext.panel.Panel` - Painel básico
-- `Ext.grid.Panel` - Grid/Tabela
-- `Ext.form.Panel` - Formulário
-- `Ext.button.Button` - Botão
-- `Ext.window.Window` - Janela
-- `Ext.tree.Panel` - Árvore
-- `Ext.tab.Panel` - Abas
-- `Ext.toolbar.Toolbar` - Barra de ferramentas
-- `Ext.menu.Menu` - Menu
-- `Ext.container.Container` - Container
-- `Ext.Component` - Componente base
-- `Ext.data.Store` - Store de dados
-- `Ext.data.Model` - Modelo de dados
+This documentation was extracted from the official Sencha ExtJS 4.2.1 API documentation.
