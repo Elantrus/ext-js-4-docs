@@ -52,9 +52,9 @@ Main class description...
 
 ## Examples
 ### Example 1
-```javascript
+\`\`\`javascript
 // Code example
-```
+\`\`\`
 
 ## Config options
 ### configName
